@@ -52,7 +52,7 @@ dependencies:
     repository: "file://../frontend-framework"
     condition: frontend-framework.enabled
   - name: fence
-    version: 0.1.47
+    version: 0.1.48
     repository: "file://../fence"
     condition: fence.enabled
   - name: gen3-user-data-library
@@ -60,7 +60,7 @@ dependencies:
     repository: "file://../gen3-user-data-library"
     condition: gen3-user-data-library.enabled
   - name: guppy
-    version: 0.1.23
+    version: 0.1.24
     repository: "file://../guppy"
     condition: guppy.enabled
   - name: hatchery
@@ -80,11 +80,11 @@ dependencies:
     repository: "file://../metadata"
     condition: metadata.enabled
   - name: peregrine
-    version: 0.1.28
+    version: 0.1.29
     repository: "file://../peregrine"
     condition: peregrine.enabled
   - name: portal
-    version: 0.1.37
+    version: 0.1.38
     repository: "file://../portal"
     condition: portal.enabled
   - name: requestor
@@ -96,7 +96,7 @@ dependencies:
     repository: "file://../revproxy"
     condition: revproxy.enabled
   - name: sheepdog
-    version: 0.1.27
+    version: 0.1.28
     repository: "file://../sheepdog"
     condition: sheepdog.enabled
   - name: ssjdispatcher
@@ -112,7 +112,7 @@ dependencies:
     repository: "file://../wts"
     condition: wts.enabled
   - name: pcdcanalysistools
-    version: "0.1.0"
+    version: "0.1.1"
     repository: "file://../pcdcanalysistools"
     condition: pcdcanalysistools.enabled
   - name: amanuensis
@@ -120,11 +120,11 @@ dependencies:
     repository: "file://../amanuensis"
     condition: amanuensis.enabled
   - name: gearbox
-    version: "0.1.0"
+    version: "0.1.1"
     repository: "file://../gearbox"
     condition: gearbox.enabled
   - name: gearbox-middleware
-    version: "0.1.0"
+    version: "0.1.1"
     repository: "file://../gearbox-middleware"
     condition: gearbox-middleware.enabled
 
