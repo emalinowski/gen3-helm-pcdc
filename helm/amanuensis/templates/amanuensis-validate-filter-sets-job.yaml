@@ -5,9 +5,6 @@ metadata:
   labels:
     redeploy-hash: "{{ .Release.Revision }}"
   annotations:
-    "helm.sh/hook": post-install,post-upgrade
-    "helm.sh/hook-weight": "1"
-    "helm.sh/hook-delete-policy": before-hook-creation
   labels:
     app: gen3-created-by-hook
 spec:

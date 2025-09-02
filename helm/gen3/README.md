@@ -1,6 +1,6 @@
 # gen3
 
-![Version: 0.2.7](https://img.shields.io/badge/Version-0.2.7-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: master](https://img.shields.io/badge/AppVersion-master-informational?style=flat-square)
+![Version: 0.2.8](https://img.shields.io/badge/Version-0.2.8-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: master](https://img.shields.io/badge/AppVersion-master-informational?style=flat-square)
 
 Helm chart to deploy Gen3 Data Commons
 
@@ -19,6 +19,7 @@ Helm chart to deploy Gen3 Data Commons
 | Repository | Name | Version |
 |------------|------|---------|
 | file://../access-backend | access-backend | 0.1.6 |
+| file://../amanuensis | amanuensis | 0.1.2 |
 | file://../ambassador | ambassador | 0.1.23 |
 | file://../arborist | arborist | 0.1.22 |
 | file://../argo-wrapper | argo-wrapper | 0.1.16 |
@@ -32,6 +33,8 @@ Helm chart to deploy Gen3 Data Commons
 | file://../etl | etl | 0.1.13 |
 | file://../fence | fence | 0.1.47 |
 | file://../frontend-framework | frontend-framework | 0.1.11 |
+| file://../gearbox-middleware | gearbox-middleware | 0.1.0 |
+| file://../gearbox | gearbox | 0.1.0 |
 | file://../gen3-network-policies | gen3-network-policies | 0.1.2 |
 | file://../gen3-user-data-library | gen3-user-data-library | 0.1.3 |
 | file://../guppy | guppy | 0.1.23 |
@@ -42,6 +45,7 @@ Helm chart to deploy Gen3 Data Commons
 | file://../neuvector | neuvector | 0.1.2 |
 | file://../ohif-viewer | ohif-viewer | 0.1.1 |
 | file://../orthanc | orthanc | 0.1.2 |
+| file://../pcdcanalysistools | pcdcanalysistools | 0.1.0 |
 | file://../peregrine | peregrine | 0.1.28 |
 | file://../portal | portal | 0.1.37 |
 | file://../requestor | requestor | 0.1.22 |
@@ -58,6 +62,7 @@ Helm chart to deploy Gen3 Data Commons
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | access-backend.enabled | bool | `false` | Whether to deploy the access backend subchart. |
+| amanuensis.enabled | bool | `true` |  |
 | ambassador.enabled | bool | `true` | Whether to deploy the ambassador subchart. |
 | arborist.enabled | bool | `true` | Whether to deploy the arborist subchart. |
 | argo-wrapper.enabled | bool | `false` | Whether to deploy the argo-wrapper subchart. |
@@ -185,6 +190,7 @@ Helm chart to deploy Gen3 Data Commons
 | neuvector.policies.policyMode | string | `"Monitor"` |  |
 | ohif-viewer.enabled | bool | `false` | Whether to deploy the ohif-viewer subchart. |
 | orthanc.enabled | bool | `false` | Whether to deploy the orthanc subchart. |
+| pcdcanalysistools.enabled | bool | `true` |  |
 | peregrine.enabled | bool | `true` | Whether to deploy the peregrine subchart. |
 | pidgin.enabled | bool | `false` | Whether to deploy the pidgin subchart. |
 | portal.enabled | bool | `true` | Whether to deploy the portal subchart. |
@@ -202,6 +208,9 @@ Helm chart to deploy Gen3 Data Commons
 | sheepdog.enabled | bool | `true` | Whether to deploy the sheepdog subchart. |
 | sower.enabled | bool | `false` | Whether to deploy the sower subchart. |
 | ssjdispatcher.enabled | bool | `false` | Whether to deploy the ssjdispatcher subchart. |
+| ssjdispatcher.image | map | `{"repository":null,"tag":null}` | Docker image information. |
+| ssjdispatcher.image.repository | string | `nil` | The Docker image repository for the ssjdispatcher service. |
+| ssjdispatcher.image.tag | string | `nil` | Overrides the image tag whose default is the chart appVersion. |
 | tests | map | `{"SERVICE_TO_TEST":null,"TEST_LABEL":null,"image":{"tag":"master"},"resources":{"limits":{"memory":"10G"},"requests":{"memory":"6G"}}}` | Environment variables that control which tests are run. |
 | tests.SERVICE_TO_TEST | str | `nil` | Name of the service we are testing. Default is empty as GH workflow automatically sets this. |
 | tests.TEST_LABEL | str | `nil` | Name of the test that will run. Default is empty as GH workflow automatically sets this. |

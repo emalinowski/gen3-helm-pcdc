@@ -1,6 +1,6 @@
 # sheepdog
 
-![Version: 0.1.27](https://img.shields.io/badge/Version-0.1.27-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: master](https://img.shields.io/badge/AppVersion-master-informational?style=flat-square)
+![Version: 0.1.28](https://img.shields.io/badge/Version-0.1.28-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: master](https://img.shields.io/badge/AppVersion-master-informational?style=flat-square)
 
 A Helm chart for gen3 Sheepdog Service
 
@@ -105,4 +105,4 @@ A Helm chart for gen3 Sheepdog Service
 | strategy.rollingUpdate.maxSurge | int | `1` | Number of additional replicas to add during rollout. |
 | strategy.rollingUpdate.maxUnavailable | int | `0` | Maximum amount of pods that can be unavailable during the update. |
 | terminationGracePeriodSeconds | int | `50` | sheepdog transactions take forever - try to let the complete before termination |
-| volumeMounts | list | `[{"mountPath":"/var/www/sheepdog/settings.py","name":"config-volume","readOnly":true,"subPath":"settings.py"},{"mountPath":"sheepdog/bin/settings.py","name":"config-volume","readOnly":true,"subPath":"settings.py"}]` | Volumes to mount to the container. |
+| volumeMounts | list | `[{"mountPath":"/var/www/sheepdog/settings.py","name":"config-volume","readOnly":true,"subPath":"settings.py"},{"mountPath":"/var/www/sheepdog/creds.json","name":"sheepdog-volume","readOnly":true,"subPath":"creds.json"}]` | Volumes to mount to the container. |
