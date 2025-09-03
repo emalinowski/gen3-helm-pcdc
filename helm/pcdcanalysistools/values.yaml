@@ -122,6 +122,9 @@ volumes:
   secret:
     secretName: "pcdcanalysistools-secret"
 
+# -- (map) Will completely override the commonLabels defined in the common chart's _label_setup.tpl
+commonLabels:
+
 # -- (map) Will completely override the selectorLabels defined in the common chart's _label_setup.tpl
 selectorLabels: 
 
