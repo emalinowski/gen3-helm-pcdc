@@ -52,6 +52,17 @@ global:
   # -- (int) The minimum amount of pods that are available at all times if the PDB is deployed.
   minAvialable: 1
 
+# -- (map) External Secrets settings.
+externalSecrets:
+  # -- (string) Will create the Helm "fence-config" secret even if Secrets Manager is enabled. This is helpful if you are wanting to use External Secrets for some, but not all secrets.
+  createK8sAmanuensisConfigSecret: false
+  # -- (string) Will create the Helm "fence-jwt-keys" secret even if Secrets Manager is enabled. This is helpful if you are wanting to use External Secrets for some, but not all secrets.
+  createK8sJwtKeysSecret: false
+  # -- (string) Will override the name of the aws secrets manager secret. Default is "fence-jwt-keys"
+  amanuensisJwtKeys:
+  # -- (string) Will override the name of the aws secrets manager secret. Default is "fence-config"
+  amanuensisConfig:
+
 postgres:
   # (bool) Whether the database should be restored from s3. Default to global.postgres.dbRestore
   dbRestore: false

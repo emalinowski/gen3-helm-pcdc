@@ -66,3 +66,19 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+
+{{/*
+  amanuensis JWT Keys Secrets Manager Name
+*/}}
+{{- define "amanuensis-jwt-keys" -}}
+{{- default "amanuensis-jwt-keys" .Values.externalSecrets.amanuensisJwtKeys }}
+{{- end }}
+
+
+{{/*
+  amanuensis Config Secrets Manager Name
+*/}}
+{{- define "amanuensis-config" -}}
+{{- default "amanuensis-config" .Values.externalSecrets.amanuensisConfig }}
+{{- end }}

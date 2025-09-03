@@ -36,6 +36,11 @@ A Helm chart for Kubernetes
 | datadogProfilingEnabled | bool | `true` | If enabled, the Datadog Agent will collect profiling data for your application using the Continuous Profiler. This data can be used to identify performance bottlenecks and optimize your application. |
 | datadogTraceSampleRate | int | `1` | A value between 0 and 1, that represents the percentage of requests that will be traced. For example, a value of 0.5 means that 50% of requests will be traced. |
 | env | list | `[{"name":"GEN3_UWSGI_TIMEOUT","valueFrom":{"configMapKeyRef":{"key":"uwsgi-timeout","name":"manifest-global","optional":true}}},{"name":"AWS_STS_REGIONAL_ENDPOINTS","value":"regional"},{"name":"PYTHONPATH","value":"/var/www/amanuensis"},{"name":"GEN3_DEBUG","value":"False"},{"name":"AMANUENSIS_PUBLIC_CONFIG","valueFrom":{"configMapKeyRef":{"key":"amanuensis-config-public.yaml","name":"manifest-amanuensis","optional":true}}}]` | Environment variables to pass to the container |
+| externalSecrets | map | `{"amanuensisConfig":null,"amanuensisJwtKeys":null,"createK8sAmanuensisConfigSecret":false,"createK8sJwtKeysSecret":false}` | External Secrets settings. |
+| externalSecrets.amanuensisConfig | string | `nil` | Will override the name of the aws secrets manager secret. Default is "fence-config" |
+| externalSecrets.amanuensisJwtKeys | string | `nil` | Will override the name of the aws secrets manager secret. Default is "fence-jwt-keys" |
+| externalSecrets.createK8sAmanuensisConfigSecret | string | `false` | Will create the Helm "fence-config" secret even if Secrets Manager is enabled. This is helpful if you are wanting to use External Secrets for some, but not all secrets. |
+| externalSecrets.createK8sJwtKeysSecret | string | `false` | Will create the Helm "fence-jwt-keys" secret even if Secrets Manager is enabled. This is helpful if you are wanting to use External Secrets for some, but not all secrets. |
 | fullnameOverride | string | `""` |  |
 | global.ddEnabled | bool | `false` | Whether Datadog is enabled. |
 | global.dev | bool | `true` | Whether the deployment is for development purposes. |
